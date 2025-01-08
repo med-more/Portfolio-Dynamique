@@ -40,3 +40,60 @@ body{
 .nav-link:hover::after{
     width: 100%;
 }
+header{
+    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url('assets/img/background.jpeg') center/cover no-repeat;
+    padding: 150px 0;
+    position: relative;
+    overflow: hidden;
+}
+header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    opacity: 0.3;
+    z-index: -1;
+}
+header img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid var(--accent-color);
+    box-shadow: 0 0 30px rgba(108, 99, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+header img:hover{
+    transform: scale(1.05);
+}
+@media(max-width: 767px){
+    header img{
+        width: 200px;
+        height: 200px;
+        margin-bottom: 2rem;
+    }
+}
+h1, h2{
+    font-weight: 700;
+    color: var(--accent-color);
+}
+.btn-custom{
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.btn-custom:hover{
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+}
+#about{
+    background-color: #0F3460;
+    padding: 100px 0;
+}
