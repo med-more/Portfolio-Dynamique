@@ -1,0 +1,42 @@
+:root {
+    --primary-color: #6C63FF;
+    --secondary-color: #4CAF50;
+    --background-color: #1A1A2E;
+    --text-color: #FFFFFF;
+    --accent-color: #FFC107;
+    --card-bg: #16213E;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+.navbar{
+    transition: all 0.3s ease ;
+    background-color: rgba(26, 26, 46, 0.9);
+    padding: 1rem 0;
+}
+.navbar-brand{
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+.nav-link{
+    position: relative;
+    color: var(--text-color);
+    font-weight: 500;
+    margin: 0 0.5rem;
+}
+.nav-link::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after{
+    width: 100%;
+}
