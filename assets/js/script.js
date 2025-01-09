@@ -52,4 +52,26 @@ $(document).ready(function() {
         loadProjects(3, 3);
         $(this).hide();
     });
+
+    function loadProjects(start, count){
+        for (let i = start; i < start+count && i< projects.length; i++) {
+            const project = projects[i];
+            const projectHtml = `
+            <div class="col-md-4 mb-4 animate-fadeInUp" style="animation-delay: ${(i - start) * 0.1}s">
+                    <div class="card project-card h-100">
+                        <img src="${project.image}" class="card-img-top" alt="${project.title}">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">${project.title}</h5>
+                            <p class="card-text flex-grow-1">${project.description}</p>
+                            <div class="mt-auto">
+                                <p class="card-text"><small ">Technologies: ${project.technologies.join(', ')}</small></p>
+                                <a href="${project.link}" class="btn btn-primary mt-2" target="_blank">See Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            $('#projectsContainer').append(projectHtml);       
+        }
+    }
 });
