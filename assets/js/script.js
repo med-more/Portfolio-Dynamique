@@ -45,4 +45,11 @@ $(document).ready(function() {
             technologies: ["Node.js"]
         }, 
     ];
+    loadProjects(0, 3);
+
+    //load more projects
+    $('#loadMore').on('click', function() {
+        loadProjects(3, 3);
+        $(this).hide();
+    });
 });
