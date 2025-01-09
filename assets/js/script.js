@@ -21,4 +21,28 @@ $(document).ready(function() {
         }
     });
 
+    // Projects data
+    const projects = [
+        {
+            title: "static blog", 
+            description: "A static blog created with HTML and CSS, bootstrap and jquery, showcasing a clean design and an optimized user experience.", 
+            image: "assets/img/blog.png", 
+            link: "https://github.com/med-more/Blog-Statique",
+            technologies: ["HTML", "CSS"]
+        }, 
+        { 
+            title: "task-manager", 
+            description: "a task management backend application in Node.js with Express.js and MongoDB.", 
+            image: "assets/img/task.jpg", 
+            link: "https://github.com/med-more/gestionnaire-des-taches",
+            technologies: ["Node.js", "Express.js", "MongoDb"]
+        },
+        {
+            title: "Inventory Manager for a Small Business", 
+            description: "a Inventory Manager backend application in Node.js.", 
+            image: "assets/img/Inventory.jpg", 
+            link: "https://github.com/med-more/Gestionnaire-de-Stock-pour-une-Petite-Entreprise",
+            technologies: ["Node.js"]
+        }, 
+    ];
 });
