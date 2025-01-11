@@ -43,7 +43,7 @@ $(document).ready(function() {
             image: "assets/img/Inventory.jpg", 
             link: "https://github.com/med-more/Gestionnaire-de-Stock-pour-une-Petite-Entreprise",
             technologies: ["Node.js"]
-        }, 
+        }
     ];
     loadProjects(0, 3);
 
@@ -53,6 +53,15 @@ $(document).ready(function() {
         $(this).hide();
     });
 
+    $('#contactForm').on('submit', function(e) {
+        e.preventDefault();
+        if (validateForm()) {
+            // Here you would typically send the form data to a server
+            alert('Message send successfully!');
+            this.reset();
+        }
+        
+    });
     function loadProjects(start, count){
         for (let i = start; i < start+count && i< projects.length; i++) {
             const project = projects[i];
@@ -74,4 +83,22 @@ $(document).ready(function() {
             $('#projectsContainer').append(projectHtml);       
         }
     }
+    function validateForm() {
+        let isValid = true;
+        $('#contactForm input, #contactForm textarea').each(function() {
+            if ($(this).val().trim() === '') {
+                $(this).addClass('is-invalid');
+                isValid = false;
+            } else {
+                $(this).removeClass('is-invalid');
+            }
+        });
+        return isValid;
+    }
+
+    $('.skill-item').each(function(i) {
+        $(this).waypoint(function() {
+            $(this.element).addClass('animated fadeIn').css('opacity', '1');
+        }, { offset: '75%' });
+    });
 });
